@@ -1,35 +1,30 @@
 <template>
-  <v-app>
-    <v-app-bar
-      app
-      color="primary"
-      dark
-    >
-      <div class="d-flex align-center">
-       <v-btn class="ma-3">
-         <router-link to="/">Home</router-link>
-       </v-btn>
+  <v-app class="grey lighten-4">
+    <Navbar/>
 
-        <v-btn>
-          <router-link to="/About">About</router-link>
-        </v-btn>
-      </div>
-
-      <v-spacer></v-spacer>
-
-    </v-app-bar>
-
-    <v-main>
+    <v-main class="mx-15 mt-5">
       <router-view/>
     </v-main>
+
+    <v-footer padless>
+      <v-col
+        class="text-center"
+        cols="12"
+      >
+        © {{ new Date().getFullYear() }} — <strong>Biz bunu Yunus Emre Altanay'la Birlite Yaptık!</strong>
+      </v-col>
+    </v-footer>
+
   </v-app>
 </template>
 
 <script>
-
+import Navbar from '@/components/NavBar'
 export default {
   name: 'App',
-
+  components: {
+    Navbar
+  },
   data: () => ({
     //
   }),
